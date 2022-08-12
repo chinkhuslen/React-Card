@@ -1,9 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Page from './searchPage/page'
 import './style.css'
+import data from './data.json'
+import { ButtonProvider } from './component/contextButton';
 function App() {
-  return (<Page/>);
+  return (
+    <ButtonProvider>
+      <Page data = {data}/>
+    </ButtonProvider>
+  );
 }
 
 export default App;

@@ -1,30 +1,16 @@
-
-import Avatar from './avatar'
-const Card = () =>{
+import XList from './expList'
+import CardFooter from './cardFooter'
+import CardHeader from './cardHeader'
+import { useState } from 'react'
+const Card = ({data}) =>{
     return (
     <div className="card">
-        <div className="cardHeader">
-            <div>
-                <div>Name</div>
-                <div>Profession</div>
-            </div>
-            <Avatar url = {'https://picsum.photos/60'}/>
-        </div>
+        <CardHeader name ={data.name} job = {data.profession} url={data.profile}/>
         <div className="match">76% Match</div>
-        <div>
-            <ul>
-                <li>Computer Sceince Degree</li>
-                <li>Computer Sceince Degree</li>
-                <li>Computer Sceince Degree</li>
-                <li>Computer Sceince Degree</li>
-            </ul>
+        <div className='Xlist'>
+            <XList exp = {data.experience}/>
         </div>
-        <div className="cardFooter">
-            <div>
-                <button className="VMButton">View More</button>
-            </div>
-            <div>icon icon icon icon</div>
-        </div>
+        <CardFooter social = {data.socialLinks}/>
     </div>)
 }
 export default Card
